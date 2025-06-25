@@ -44,6 +44,7 @@ UIUonePOINT is an Integrated Management System for handling both Canteen and Sto
 - View product details, including images, descriptions, and seller info
 - Place orders for eShopping products with quantity and mobile number
 - Track eShopping order status
+- Chat with seller while the order is not delivered yet
 - Sellers can add, edit, and manage their own products
 - Sellers can view and process eShopping orders
 - Product stock management and low stock alerts for sellers
@@ -214,10 +215,6 @@ UIUonePOINT/
 │       │               │   ├── ImgBBUploader.java
 │       │               │   ├── OrderSchedulerService.java
 │       │               │
-│       │               ├── utils/              # (Empty or for future use)
-│       │               │
-│       │               ├── HelloApplication.java
-│       │               ├── HelloController.java
 │       │               ├── UIUonePOINTApplication.java   # Main entry point
 │       │               ├── AI_instructions.md
 │       │               ├── UIUonePOINT_project_requirements.md
@@ -286,7 +283,7 @@ UIUonePOINT/
 ### Customer
 - Place food orders
 - Purchase grocery items
-- Place eShopping orders
+- Place eShopping orders and chat with the seller
 - View order history (food, grocery, eShopping)
 - Track order status
 
@@ -302,6 +299,7 @@ UIUonePOINT/
 - View sales reports
 - Process orders
 - Monitor stock levels
+- Manages Seller Requests
 
 ## Troubleshooting & FAQ
 
@@ -311,6 +309,7 @@ UIUonePOINT/
 
 **Q: Database connection errors?**
 - Verify MySQL is running and credentials in `DatabaseConnection.java` are correct.
+- This project uses the MySql in "4306" port instead of regular "3306" port.
 - Ensure the schema is imported and tables exist.
 
 **Q: UI not displaying correctly?**
