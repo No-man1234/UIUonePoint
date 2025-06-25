@@ -132,9 +132,11 @@ UIUonePOINT is an Integrated Management System for handling both Canteen and Sto
 ## Running & Testing
 
 - **Run the Chat Server First:**
-  - Navigate to the chat server directory (e.g., `src/main/java/com/example/uiu/chatserver/` if provided).
-  - Compile and run the chat server (typically a `main` method in a `ChatServer.java` file).
+  - Move the UIUonePoint-Server folder from the project directory and place it somewhere else 
+  - Navigate to the chat server directory (e.g., `src/main/java/com/example/uiuonepoint/server/chatserver/`).
+  - Compile and run the chat server (a `main` method in a `ChatServer.java` file).
   - Ensure the chat server is running and listening on the correct port (default: 5000).
+- **Now back to the Project Directoru** 
 - **Run via Maven**: `mvn javafx:run`
 - **Run via IDE**: Right-click `UIUonePOINTApplication.java` and select 'Run'.
 - **Testing**: Manual testing via the UI. (Automated tests can be added as needed.)
