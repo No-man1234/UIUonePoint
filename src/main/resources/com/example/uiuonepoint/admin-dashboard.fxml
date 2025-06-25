@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.example.uiuonepoint.controller.AdminDashboardController"
+      stylesheets="@styles.css"
+      fitToWidth="true"
+      pannable="true"
+      style="-fx-background-color: white;"
+      VBox.vgrow="ALWAYS">
+    <VBox spacing="20" style="-fx-background-color: white;">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS"/>
+            <Button onAction="#handleLogout" text="Logout" styleClass="secondary-button"/>
+        </HBox>
+
+
+        <HBox spacing="20" alignment="CENTER">
+
+            <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label styleClass="dashboard-title" text="Today's Food Sales"/>
+                <Text fx:id="todayFoodSales" styleClass="dashboard-value"/>
+            </VBox>
+
+
+            <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label styleClass="dashboard-title" text="Today's Grocery Sales"/>
+                <Text fx:id="todayGrocerySales" styleClass="dashboard-value"/>
+            </VBox>
+
+
+            <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label styleClass="dashboard-title" text="Pending Orders"/>
+                <Text fx:id="pendingOrdersCount" styleClass="dashboard-value"/>
+            </VBox>
+
+
+            <VBox styleClass="dashboard-tile" HBox.hgrow="ALWAYS" alignment="CENTER">
+                <Label styleClass="dashboard-title" text="Low Stock Items"/>
+                <Text fx:id="lowStockCount" styleClass="dashboard-value"/>
+            </VBox>
+        </HBox>
+
+
+        <HBox spacing="20">
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="section-container">
+                <Label text="Canteen Management" styleClass="section-title"/>
+                
+                <Button onAction="#handleAddFoodItem" text="Manage Food Items" styleClass="full-width-button"/>
+                <Button onAction="#handleViewFoodOrders" text="View Food Orders" styleClass="full-width-button"/>
+                <Button onAction="#handleGenerateFoodReport" text="Generate Food Report" styleClass="full-width-button"/>
+            </VBox>
+
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="section-container">
+                <Label text="Grocery Management" styleClass="section-title"/>
+                
+                <Button onAction="#handleAddGroceryItem" text="Manage Grocery Items" styleClass="full-width-button"/>
+                <Button onAction="#handleViewGroceryOrders" text="View Grocery Orders" styleClass="full-width-button"/>
+                <Button onAction="#handleGenerateGroceryReport" text="Generate Grocery Report" styleClass="full-width-button"/>
+            </VBox>
+
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="section-container">
+                <Label text="User Management" styleClass="section-title"/>
+                
+                <Button onAction="#handleViewSellerRequests" text="Manage Seller Requests" styleClass="full-width-button"/>
+            </VBox>
+        </HBox>
+
+
+        <TabPane minHeight="300" prefHeight="400">
+            <tabs>
+
+                <Tab text="Food Items" closable="false">
+                    <VBox spacing="10" styleClass="admin-items-table-container">
+                        <Label text="Available Food Items" styleClass="admin-table-title"/>
+                        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="admin-items-scroll">
+                            <TableView fx:id="foodItemsTable">
+                                <columns>
+                                    <TableColumn fx:id="foodIdColumn" text="ID">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="id" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodNameColumn" text="Name">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="name" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodPriceColumn" text="Price">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="price" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodDescriptionColumn" text="Description">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="description" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodCategoryColumn" text="Category">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="category" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodStockColumn" text="Stock">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="stockQuantity" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="foodAvailableColumn" text="Available">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="available" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                </columnResizePolicy>
+                            </TableView>
+                        </ScrollPane>
+                    </VBox>
+                </Tab>
+
+
+                <Tab text="Grocery Items" closable="false">
+                    <VBox spacing="10" styleClass="admin-items-table-container">
+                        <Label text="Available Grocery Items" styleClass="admin-table-title"/>
+                        <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS" styleClass="admin-items-scroll">
+                            <TableView fx:id="groceryItemsTable">
+                                <columns>
+                                    <TableColumn fx:id="groceryIdColumn" text="ID">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="id" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryNameColumn" text="Name">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="name" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryPriceColumn" text="Price">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="price" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryDescriptionColumn" text="Description">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="description" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryCategoryColumn" text="Category">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="category" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryStockColumn" text="Stock">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="stockQuantity" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                    <TableColumn fx:id="groceryAvailableColumn" text="Available">
+                                        <cellValueFactory>
+                                            <PropertyValueFactory property="available" />
+                                        </cellValueFactory>
+                                    </TableColumn>
+                                </columns>
+                                <columnResizePolicy>
+                                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                                </columnResizePolicy>
+                            </TableView>
+                        </ScrollPane>
+                    </VBox>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </VBox>
+</ScrollPane>

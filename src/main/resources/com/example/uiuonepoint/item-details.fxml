@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="detailsContainer" alignment="CENTER" spacing="20" styleClass="details-container" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uiuonepoint.controller.ItemDetailsController">
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+    <ImageView fx:id="itemImageView" fitWidth="300" fitHeight="200" preserveRatio="true" />
+    
+    <VBox spacing="10" alignment="CENTER_LEFT">
+        <Label fx:id="nameLabel" styleClass="details-name" />
+        <Label fx:id="priceLabel" styleClass="details-price" />
+        <Label fx:id="categoryLabel" styleClass="details-category" />
+        <Label fx:id="stockLabel" styleClass="details-stock" />
+        <Label fx:id="descriptionLabel" styleClass="details-description" wrapText="true" />
+    </VBox>
+
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="addToCartButton" text="Add to Cart" onAction="#handleAddToCart" />
+        <Button fx:id="closeButton" text="Close" onAction="#handleClose" />
+    </HBox>
+</VBox> 

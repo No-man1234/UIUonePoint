@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.uiuonepoint.controller.ChatController"
+      spacing="10"
+      style="-fx-background-color: #f5f5f5;">
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+    
+    <Label fx:id="statusLabel" 
+           text="Connecting to chat server..."
+           style="-fx-font-size: 14px; -fx-text-fill: #666;"/>
+    
+    <TextArea fx:id="chatArea"
+              VBox.vgrow="ALWAYS"
+              editable="false"
+              wrapText="true"
+              style="-fx-font-size: 14px; -fx-background-color: white; -fx-border-color: #ddd;"/>
+    
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <TextField fx:id="messageField"
+                  HBox.hgrow="ALWAYS"
+                  promptText="Type your message here..."
+                  style="-fx-font-size: 14px;"/>
+        
+        <Button fx:id="sendButton"
+                text="Send"
+                style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-size: 14px;"/>
+    </HBox>
+</VBox> 

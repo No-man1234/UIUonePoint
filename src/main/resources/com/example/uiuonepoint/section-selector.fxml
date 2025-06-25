@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" prefHeight="579.0" prefWidth="610.0" spacing="20.0" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uiuonepoint.controller.SectionSelectorController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <VBox.margin>
+            <Insets top="-200.0" />
+        </VBox.margin>
+        <Button fx:id="myOrdersButton" onAction="#handleMyOrders" style="-fx-font-size: 11;" text="My Orders" />
+        <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+        <Label fx:id="becomeSellerLabel" styleClass="become-seller-label" text="Click here to become a seller! ->">
+            <font>
+                <Font name="System Bold" size="12.0" />
+            </font>
+        </Label>
+        <Button fx:id="becomeSellerButton" onAction="#handleBecomeSeller" styleClass="secondary-button" text="click here" />
+    </HBox>
+
+    <Label fx:id="welcomeLabel" styleClass="title-text" />
+
+    <Text styleClass="form-title" text="Select a Section" />
+
+    <HBox alignment="CENTER" spacing="50.0">
+        <Button fx:id="canteenButton" onAction="#handleCanteenSection" styleClass="section-button">
+            <graphic>
+                <VBox alignment="CENTER" spacing="10">
+                    <Text styleClass="emoji-text" text="🥘" />
+                    <Text text="Order Food" />
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button fx:id="groceryButton" onAction="#handleGrocerySection" styleClass="section-button">
+            <graphic>
+                <VBox alignment="CENTER" spacing="10">
+                    <Text styleClass="emoji-text" text="🛒" />
+                    <Text text="Buy Groceries" />
+                </VBox>
+            </graphic>
+        </Button>
+
+        <Button fx:id="eShoppingButton" onAction="#handleEShoppingSection" styleClass="section-button">
+            <graphic>
+                <VBox alignment="CENTER" spacing="10">
+                    <Text styleClass="emoji-text" text="🛒" />
+                    <Text text="eShopping" />
+                </VBox>
+            </graphic>
+        </Button>
+    </HBox>
+    
+    <Button mnemonicParsing="false" onAction="#handleLogout" styleClass="secondary-button" text="Log Out" />
+</VBox>

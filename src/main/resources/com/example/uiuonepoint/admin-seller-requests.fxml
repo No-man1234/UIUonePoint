@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+      fx:controller="com.example.uiuonepoint.controller.AdminSellerRequestsController"
+      stylesheets="@styles.css"
+      spacing="20"
+      style="-fx-background-color: white;"
+      VBox.vgrow="ALWAYS">
+    
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+
+    <HBox alignment="CENTER_LEFT" spacing="20">
+        <Button onAction="#handleBack" text="← Back" styleClass="back-button"/>
+        <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS"/>
+        <Button onAction="#handleLogout" text="Logout" styleClass="secondary-button"/>
+    </HBox>
+
+
+    <HBox alignment="CENTER">
+        <Text styleClass="section-title" text="Manage Seller Requests"/>
+    </HBox>
+
+
+    <StackPane>
+        <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+    </StackPane>
+
+
+    <VBox VBox.vgrow="ALWAYS">
+        <TableView fx:id="requestsTable" VBox.vgrow="ALWAYS">
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+            <columns>
+                <TableColumn fx:id="idColumn" text="ID" prefWidth="50" />
+                <TableColumn fx:id="usernameColumn" text="Username" prefWidth="150" />
+                <TableColumn fx:id="dateColumn" text="Request Date" prefWidth="150" />
+                <TableColumn fx:id="reasonColumn" text="Reason" prefWidth="250" />
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100" />
+                <TableColumn fx:id="actionsColumn" text="Actions" prefWidth="150" />
+            </columns>
+        </TableView>
+    </VBox>
+</VBox> 

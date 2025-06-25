@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="20" style="-fx-background-color: white;" stylesheets="@styles.css" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uiuonepoint.controller.EShoppingOrdersController">
+    
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleBack" styleClass="secondary-button" text="Back " />
+        <Button onAction="#handleLogout" styleClass="secondary-button" text="Logout" />
+    </HBox>
+
+
+    <VBox spacing="20" VBox.vgrow="ALWAYS">
+        <Label styleClass="section-title" text="eShopping Orders" />
+
+
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Label text="Filter by Status:" />
+            <ComboBox fx:id="statusFilterComboBox" prefWidth="150" />
+        </HBox>
+
+
+        <TableView fx:id="ordersTable" styleClass="content-table" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" prefWidth="98.5" text="Order ID" />
+                <TableColumn fx:id="productNameColumn" prefWidth="181.5" text="Product" />
+                <TableColumn fx:id="customerColumn" prefWidth="150" text="Customer" />
+                <TableColumn fx:id="mobileColumn" prefWidth="150" text="Mobile No" />
+                <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity" />
+                <TableColumn fx:id="totalColumn" prefWidth="100.0" text="Total" />
+                <TableColumn fx:id="statusColumn" prefWidth="100.0" text="Status" />
+                <TableColumn fx:id="actionsColumn" prefWidth="152.0" text="Actions" />
+            </columns>
+        </TableView>
+    </VBox>
+
+
+    <ProgressIndicator fx:id="loadingIndicator" visible="false" StackPane.alignment="CENTER" />
+</VBox>

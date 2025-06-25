@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.uiuonepoint.controller.AdminCanteenOrdersController"
+      spacing="20" styleClass="content-container"
+      stylesheets="@styles.css">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT" styleClass="header-container">
+        <Label fx:id="welcomeLabel" styleClass="welcome-text"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Label text="Canteen Orders" styleClass="page-title"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button text="Back" onAction="#handleBack" styleClass="secondary-button"/>
+    </HBox>
+
+    <TabPane VBox.vgrow="ALWAYS" styleClass="orders-tab-pane">
+        <Tab text="Pending Orders" closable="false">
+            <VBox spacing="10" styleClass="table-container">
+                <TableView fx:id="pendingOrdersTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="pendingOrderIdColumn" text="Order ID" prefWidth="100"/>
+                        <TableColumn fx:id="pendingCustomerColumn" text="Customer" prefWidth="150"/>
+                        <TableColumn fx:id="pendingDateColumn" text="Date" prefWidth="150"/>
+                        <TableColumn fx:id="pendingItemsColumn" text="Items" prefWidth="300"/>
+                        <TableColumn fx:id="pendingTotalColumn" text="Total" prefWidth="100"/>
+                        <TableColumn fx:id="pendingActionsColumn" text="Actions" prefWidth="100"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+        </Tab>
+        <Tab text="Completed Orders" closable="false">
+            <VBox spacing="10" styleClass="table-container">
+                <TableView fx:id="completedOrdersTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="completedOrderIdColumn" text="Order ID" prefWidth="100"/>
+                        <TableColumn fx:id="completedCustomerColumn" text="Customer" prefWidth="150"/>
+                        <TableColumn fx:id="completedDateColumn" text="Date" prefWidth="150"/>
+                        <TableColumn fx:id="completedItemsColumn" text="Items" prefWidth="300"/>
+                        <TableColumn fx:id="completedTotalColumn" text="Total" prefWidth="100"/>
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+                    </columnResizePolicy>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+
+    <ProgressIndicator fx:id="loadingIndicator" visible="false"/>
+</VBox> 

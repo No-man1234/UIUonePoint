@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox fx:id="root" spacing="20" style="-fx-background-color: white;" stylesheets="@styles.css" VBox.vgrow="ALWAYS" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uiuonepoint.controller.SellerDashboardController">
+    
+    <padding>
+        <Insets bottom="20" left="20" right="20" top="20" />
+    </padding>
+
+
+    <HBox alignment="CENTER_RIGHT" spacing="10">
+        <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS" />
+        <Button onAction="#handleLogout" styleClass="secondary-button" text="Logout" />
+    </HBox>
+
+
+    <HBox alignment="CENTER" spacing="20">
+
+        <VBox alignment="CENTER" styleClass="dashboard-tile" HBox.hgrow="ALWAYS">
+            <Label styleClass="dashboard-title" text="Pending Orders" />
+            <Text fx:id="pendingOrdersCount" styleClass="dashboard-value" />
+        </VBox>
+
+        <VBox alignment="CENTER" styleClass="dashboard-tile" HBox.hgrow="ALWAYS">
+            <Label styleClass="dashboard-title" text="Today's Sales" />
+            <Text fx:id="todaySales" styleClass="dashboard-value" />
+        </VBox>
+
+        <VBox alignment="CENTER" styleClass="dashboard-tile" HBox.hgrow="ALWAYS">
+            <Label styleClass="dashboard-title" text="Total Products" />
+            <Text fx:id="totalProductsCount" styleClass="dashboard-value" />
+        </VBox>
+
+        <VBox alignment="CENTER" styleClass="dashboard-tile" HBox.hgrow="ALWAYS">
+            <Label styleClass="dashboard-title" text="Low Stock" />
+            <Text fx:id="lowStockCount" styleClass="dashboard-value" />
+        </VBox>
+    </HBox>
+
+
+    <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+        <VBox spacing="10" styleClass="section-container" HBox.hgrow="ALWAYS">
+            <Label styleClass="section-title" text="eShopping Product Management" />
+            <HBox alignment="CENTER" spacing="10">
+                <Button onAction="#handleEShoppingProductsManager" prefWidth="156.0" styleClass="primary-button full-width-button" text="My Products" HBox.hgrow="ALWAYS" />
+                <Button onAction="#handleEShoppingOrders" prefWidth="156.0" styleClass="primary-button full-width-button" text="View Orders" HBox.hgrow="ALWAYS" />
+            </HBox>
+        </VBox>
+
+        <VBox spacing="10" styleClass="section-container" HBox.hgrow="ALWAYS">
+            <Label styleClass="section-title" text="Product Stock Overview" />
+            <TableView fx:id="productsTable" styleClass="content-table" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn fx:id="idColumn" prefWidth="67.5" text="ID" />
+                    <TableColumn fx:id="nameColumn" prefWidth="182.5" text="Name" />
+                    <TableColumn fx:id="priceColumn" prefWidth="100" text="Price" />
+                    <TableColumn fx:id="stockColumn" prefWidth="100" text="Stock" />
+                </columns>
+            </TableView>
+        </VBox>
+    </HBox>
+</VBox>

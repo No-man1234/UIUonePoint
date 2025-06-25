@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.uiuonepoint.controller.SignupController"
+      stylesheets="@styles.css">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Text styleClass="title-text" text="Create Account"/>
+
+    <GridPane vgap="10" hgap="10" alignment="CENTER">
+        <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+        <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+        <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+        <Label text="Confirm Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+        <PasswordField fx:id="confirmPasswordField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+        <Label text="Full Name:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+        <TextField fx:id="fullNameField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+
+        <Label text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    </GridPane>
+
+    <Button text="Sign Up" onAction="#handleSignup"/>
+
+    <Separator/>
+    
+    <VBox alignment="CENTER" spacing="10">
+        <Text text="Already have an account?"/>
+        <Button text="Back" onAction="#handleBackToLogin" styleClass="secondary-button"/>
+    </VBox>
+    
+    <Label fx:id="messageLabel" styleClass="message-label"/>
+</VBox> 

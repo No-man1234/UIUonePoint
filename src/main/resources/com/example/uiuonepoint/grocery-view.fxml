@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane fx:id="mainContainer" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uiuonepoint.controller.GroceryViewController">
+    <VBox prefHeight="768.0" prefWidth="1024.0" spacing="10" stylesheets="@styles.css">
+        
+        <padding>
+            <Insets bottom="20" left="20" right="20" top="20" />
+        </padding>
+
+        <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="984.0" spacing="10">
+            <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
+                <Button onAction="#handleViewOrders" text="My Orders" />
+            </HBox>
+            <Label fx:id="welcomeLabel" styleClass="welcome-label" HBox.hgrow="ALWAYS" />
+            <Button onAction="#handleBack" styleClass="secondary-button" text="Back" />
+            <Button onAction="#handleLogout" prefHeight="49.0" prefWidth="120.0" styleClass="secondary-button" text="Logout" />
+        </HBox>
+
+        <HBox spacing="20" VBox.vgrow="ALWAYS">
+
+            <VBox spacing="10" HBox.hgrow="ALWAYS">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Filter by Category:" />
+                    <ComboBox fx:id="filterComboBox">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="All" />
+                                <String fx:value="snacks" />
+                                <String fx:value="stationery" />
+                                <String fx:value="beverages" />
+                                <String fx:value="others" />
+                            </FXCollections>
+                        </items>
+                        <value>
+                            <String fx:value="All" />
+                        </value>
+                    </ComboBox>
+                </HBox>
+
+                <ScrollPane VBox.vgrow="ALWAYS">
+                    <GridPane fx:id="groceryItemsGrid" hgap="10" styleClass="items-grid" vgap="10">
+                        <padding>
+                            <Insets bottom="10" left="10" right="10" top="10" />
+                        </padding>
+                    </GridPane>
+                </ScrollPane>
+            </VBox>
+
+
+            <VBox prefHeight="676.0" prefWidth="480.0" spacing="10" styleClass="cart-section">
+                <Label styleClass="title-text" text="Your Cart" />
+                
+                <TableView fx:id="cartTable" prefHeight="489.0" prefWidth="445.0" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="cartItemColumn" prefWidth="72.5" text="Item" />
+                        <TableColumn fx:id="quantityColumn" prefWidth="87.0" text="Quantity" />
+                        <TableColumn fx:id="itemPriceColumn" prefWidth="60.5" text="Price" />
+                        <TableColumn fx:id="totalColumn" prefWidth="64.5" text="Total" />
+                        <TableColumn fx:id="removeColumn" maxWidth="86.5" minWidth="50.0" prefWidth="82.5" resizable="false" text="Remove" />
+                    </columns>
+                    <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                    </columnResizePolicy>
+                </TableView>
+
+                <HBox alignment="CENTER_RIGHT" spacing="20">
+                    <Label text="Total Amount:" />
+                    <Label fx:id="totalAmountLabel" styleClass="total-amount" />
+                </HBox>
+
+                <Button maxWidth="Infinity" onAction="#handlePlaceOrder" text="Place Order" />
+            </VBox>
+        </HBox>
+    </VBox>
+    
+    <ProgressIndicator fx:id="loadingIndicator" visible="false" StackPane.alignment="CENTER" />
+</StackPane>

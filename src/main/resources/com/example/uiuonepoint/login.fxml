@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.example.uiuonepoint.controller.LoginController"
+         stylesheets="@styles.css">
+    <VBox alignment="CENTER" spacing="20.0" styleClass="form-container" maxWidth="500">
+        <padding>
+            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0"/>
+        </padding>
+
+        <ImageView fitWidth="400" preserveRatio="true">
+            <Image url="@images/loginView.jpg"/>
+        </ImageView>
+
+        <Text styleClass="title-text" text="UIUonePOINT Login"/>
+
+        <GridPane styleClass="grid-pane" vgap="15" hgap="15">
+            <Label text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+            <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+            <Label text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+            <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+        </GridPane>
+
+        <Button text="Login" onAction="#handleLogin"/>
+
+        <Separator/>
+        
+        <VBox alignment="CENTER" spacing="10">
+            <Text text="Don't have an account?"/>
+            <Button text="Sign Up" onAction="#handleSignup" styleClass="secondary-button"/>
+        </VBox>
+        
+        <Label fx:id="messageLabel" styleClass="message-label"/>
+    </VBox>
+</StackPane> 

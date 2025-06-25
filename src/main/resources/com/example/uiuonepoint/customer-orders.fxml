@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainContainer" xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.uiuonepoint.controller.CustomerOrdersController"
+      stylesheets="@styles.css">
+    
+    <VBox spacing="20" styleClass="main-container,section-container">
+        <padding>
+            <Insets top="20" right="20" bottom="20" left="20"/>
+        </padding>
+
+
+        <HBox spacing="20" alignment="CENTER_LEFT" styleClass="header-container">
+            <Button text="Back" onAction="#handleBack" styleClass="back-button"/>
+            <Text text="My Orders" styleClass="section-title,page-title"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Button text="Logout" onAction="#handleLogout" styleClass="logout-button"/>
+        </HBox>
+
+
+        <HBox spacing="10" alignment="CENTER_LEFT" styleClass="form-container">
+            <Label text="Status:" styleClass="filter-label"/>
+            <ComboBox fx:id="statusFilterComboBox" prefWidth="200" styleClass="filter-combo"/>
+        </HBox>
+
+
+        <TableView fx:id="ordersTable" VBox.vgrow="ALWAYS" styleClass="content-table">
+            <columns>
+                <TableColumn fx:id="orderIdColumn" prefWidth="100" text="Order ID"/>
+                <TableColumn fx:id="productNameColumn" prefWidth="200" text="Product"/>
+                <TableColumn fx:id="quantityColumn" prefWidth="100" text="Quantity"/>
+                <TableColumn fx:id="totalColumn" prefWidth="100" text="Total"/>
+                <TableColumn fx:id="statusColumn" prefWidth="150" text="Status"/>
+                <TableColumn fx:id="dateColumn" prefWidth="200" text="Order Date"/>
+                <TableColumn fx:id="chatColumn" prefWidth="150" text="Chat"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+
+    <ProgressIndicator fx:id="loadingIndicator" visible="false" StackPane.alignment="CENTER" />
+</StackPane> 
