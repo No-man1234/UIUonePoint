@@ -4,9 +4,9 @@ UIUonePOINT is an Integrated Management System for handling both Canteen and Sto
 ---
 ## Teammates
 
-- **Abdullah Al Noman** (https://github.com/No-man1234)
-- **Kazi Neyamul Hasan** (https://github.com/neyamulhasan)
-- **Mahathir Mohammad** (https://github.com/mahathir58)
+- **[Abdullah Al Noman](https://github.com/No-man1234)**
+- **[Kazi Neyamul Hasan](https://github.com/neyamulhasan)**
+- **[Mahathir Mohammad](https://github.com/mahathir58)**
 
 
 ---
