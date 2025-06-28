@@ -1,6 +1,13 @@
 # UIUonePOINT
 
 UIUonePOINT is an Integrated Management System for handling both Canteen and Store (Grocery) operations within United International University (UIU). The system provides a unified platform for managing food orders and grocery purchases, with separate interfaces for customers and administrators.
+---
+## Teammates
+
+- **Abdullah Al Noman** (https://github.com/No-man1234)
+- **Kazi Neyamul Hasan** (https://github.com/neyamulhasan)
+- **Mahathir Mohammad** (https://github.com/mahathir58)
+
 
 ---
 
