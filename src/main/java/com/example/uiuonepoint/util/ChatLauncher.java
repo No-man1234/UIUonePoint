@@ -18,7 +18,7 @@ public class ChatLauncher {
             controller.setUserInfo(username, isSeller, chatId);
             
             Stage stage = new Stage();
-            stage.setTitle((isSeller ? "Seller" : "Customer") + " Chat - " + username + " (Order #" + chatId + ")");
+            stage.setTitle(isSeller ? "Seller Chat - " + username : "Customer Chat - " + username);
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
             
