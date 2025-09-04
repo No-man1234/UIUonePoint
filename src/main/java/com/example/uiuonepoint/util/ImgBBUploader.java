@@ -8,7 +8,7 @@ import java.nio.file.Files;
 import java.util.Base64;
 
 public class ImgBBUploader {
-    private static final String IMGBB_API_KEY = "19a9ead07abe8b31be0c5e74d52f4b27";
+    private static final String IMGBB_API_KEY = "ADD_YOUR_IMGBB_API_KEY";
     private static final String IMGBB_UPLOAD_URL = "https://api.imgbb.com/1/upload";
 
     public static String uploadImage(File imageFile) throws IOException {
