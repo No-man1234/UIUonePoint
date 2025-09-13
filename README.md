@@ -109,7 +109,7 @@ UIUonePOINT is an Integrated Management System for handling both Canteen and Sto
 
 1. **Clone the repository**
    ```bash
-   git clone [repository-url]
+   git clone https://github.com/No-man1234/UIUonePoint.git
    cd UIUonePOINT
    ```
 
